@@ -19,7 +19,7 @@ if [ "$1" = 'squid' ]; then
         avahi-daemon -D
     fi
 
-    exec /usr/sbin/squid3 -N -f /etc/squid-deb-proxy/squid-deb-proxy.conf
+    exec /usr/sbin/squid -N -f /etc/squid-deb-proxy/squid-deb-proxy.conf
 fi
 
 exec "$@"
