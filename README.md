@@ -11,7 +11,7 @@ docker run \
     -e USE_ACL=0 \
     --name %n \
     --rm \
-    muccg/squid-deb-proxy:latest
+    lalberslz4/squid-deb-proxy:latest
 ```
 
 Environment:

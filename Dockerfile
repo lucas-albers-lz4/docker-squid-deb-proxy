@@ -1,10 +1,12 @@
 #
-FROM debian:stretch-slim
-MAINTAINER https://github.com/muccg/
+FROM ubuntu:noble-20250127
+LABEL maintainer="Lucas Albers <https://github.com/lalbers-lz4>"
+LABEL org.opencontainers.image.source="https://hub.docker.com/r/lalberslz4/squid-deb-proxy"
 
 ENV USE_ACL=1
 ENV USE_AVAHI=0
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   avahi-utils \

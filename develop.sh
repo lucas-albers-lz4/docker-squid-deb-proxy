@@ -2,7 +2,7 @@
 set +x
 set -e
 
-: "${CCG_DOCKER_ORG:=muccg}"
+: "${CCG_DOCKER_ORG:=lalberslz4}"
 : "${CCG_COMPOSER:=ccg-composer}"
 : "${CCG_COMPOSER_VERSION:=latest}"
 : "${CCG_PIP_PROXY=0}"
