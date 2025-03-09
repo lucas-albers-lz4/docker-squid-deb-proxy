@@ -51,16 +51,15 @@ RUN chmod +x /docker-entrypoint.sh
 VOLUME ["/data"]
 
 # Expose ports
-EXPOSE 8000 5353/udp
+EXPOSE 3128/tcp 5353/udp
 
 # Add healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD nc -z localhost 8000 || exit 1
+  CMD nc -z localhost 3128 || exit 1
 
 # Switch to non-root user (using numeric ID for better security)
 ENV PATH=/usr/local/squid/sbin:/usr/local/squid/bin:$PATH
 USER 10000:10000
-EXPOSE 3128
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["squid", "-N"]
